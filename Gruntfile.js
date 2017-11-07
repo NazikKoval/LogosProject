@@ -16,19 +16,27 @@ module.exports = function (grunt) {
             }
         },
 
-        cssmin : {
-			target : {
-				src : ["static/css/src/*.css"],
-				dest : "static/css/dist/style.min.css"
-			}
-		}
+        sass: {
+            dist: {
+                options: {
+                    style: 'expanded'
+                },
+                files: {
+                    'static/css/dist/style.css': 'static/css/src/style.sass'
+                }
+            },
+        }
 
-	});
-        
+    });
+
     grunt.loadNpmTasks('grunt-contrib-concat');
     grunt.loadNpmTasks('grunt-contrib-uglify');
     grunt.loadNpmTasks('grunt-contrib-cssmin');
+    grunt.loadNpmTasks('grunt-contrib-sass');
+    grunt.loadNpmTasks('grunt-contrib-watch');
+    grunt.registerTask('default', ['watch']);
     grunt.registerTask('default', ['concat']);
     grunt.registerTask('dev', ['concat', 'uglify']);
     grunt.registerTask("default", ["cssmin"]);
+    grunt.registerTask('default', ['sass']);
 };

@@ -1,0 +1,31 @@
+.header
+    .container
+        &:before,
+        &:after
+            display: none
+    .container,
+    &-menu
+        display: flex
+    &-menu
+        background: $color-brand
+        box-shadow: 0 0 10px rgba(0,0,0,0.5)
+        margin: 20px 0
+        &__item
+            padding: 10px 23px
+            display: flex
+            justify-content: space-between
+        &__icon
+            color: $color-inverse
+            font-size: 25px
+            cursor: pointer
+        &__text
+            color: $color-text
+            padding-left: 10px
+            align-items: center
+            display: flex
+            font-size: 16px
+        &__left
+            margin-right: 30px
+        &__right
+            flex-grow: 1
+            justify-content: space-around

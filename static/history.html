@@ -17,33 +17,33 @@
 
 <div class="header">
     <div class="container">
-        <div class="header-menu header-menu__left" ng-controller="MenuController">
-            <div class="header-menu__item" data-ng-click="toggleMenu()">
+        <div class="header-menu header-menu__left" ng-controller="MenuController as menu">
+            <div class="header-menu__item" data-ng-click="menu.toggleMenu()">
                 <div class="header-menu__icon">
                     <i class="fa fa-th-large" aria-hidden="true"></i>
                 </div>
             </div>
         </div>
-        <div class="header-menu header-menu__right" ng-controller="UserController">
+        <div class="header-menu header-menu__right" ng-controller="UserController as UserCtrl">
             <div class="header-menu__item">
                 <div class="header-menu__icon"><i class="fa fa-user-circle-o" aria-hidden="true"></i></div>
-                <div class="header-menu__text">User: {{userData.name}} {{userData.surname}}</div>
+                <div class="header-menu__text">User: {{UserCtrl.userData.name}} {{UserCtrl.userData.surname}}</div>
             </div>
             <div class="header-menu__item">
                 <div class="header-menu__icon"><i class="fa fa-balance-scale" aria-hidden="true"></i></div>
-                <div class="header-menu__text">{{userData.balance}}</div>
+                <div class="header-menu__text">${{UserCtrl.userData.balance}}</div>
             </div>
             <div class="header-menu__item">
                 <div class="header-menu__icon"><i class="fa fa-money" aria-hidden="true"></i></div>
-                <div class="header-menu__text">{{userData.expenses}}</div>
+                <div class="header-menu__text">${{UserCtrl.userData.expenses}}</div>
             </div>
             <div class="header-menu__item">
                 <div class="header-menu__icon"><i class="fa fa-calendar" aria-hidden="true"></i></div>
-                <div class="header-menu__text">{{userData.date}}</div>
+                <div id="digitalDate" class="header-menu__text"></div>
             </div>
             <div class="header-menu__item">
                 <div class="header-menu__icon"><i class="fa fa-clock-o" aria-hidden="true"></i></div>
-                <div class="header-menu__text">{{userData.time}}</div>
+                <div id="digitalWatch" class="header-menu__text"></div>
             </div>
         </div>
     </div>

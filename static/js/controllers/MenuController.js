@@ -1,6 +1,8 @@
-app.controller('MenuController', ['$scope', function($scope) {
-    $scope.toggleMenu = function() {
-        alert('Менюшечка');
-        $scope.menuShow = true;
+app.controller('MenuController', toggleMenu);
+function toggleMenu() {
+    var _this = this;
+    _this.toggleMenu = function() {
+        // TODO: Меню
+        _this.menuShow = true;
     };
-}]);
+};

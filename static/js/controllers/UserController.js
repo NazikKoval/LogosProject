@@ -1,10 +1,10 @@
-app.controller('UserController', ['$scope', function($scope) {
-    $scope.userData = {
+app.controller('UserController', UserController);
+function UserController() {
+    var _this = this;
+    _this.userData = {
         name: 'Maryana',
         surname: 'Bygar',
         balance: 1000,
-        expenses: 2000,
-        date: '00.00.00',
-        time: '00:00'      
+        expenses: 2000
     }
-}]);
+};

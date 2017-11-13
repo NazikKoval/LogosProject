@@ -1,0 +1,43 @@
+.history
+    &__title
+        text-align: center
+        font-weight: bold
+        font-size: 24px
+        margin-bottom: 25px
+    &__info
+        border: 2px solid $color-text
+        width: 900px
+        text-align: center
+        margin: 0 auto
+        padding: 25px
+    &__months
+        margin-bottom: 25px
+        ul
+            list-style: none
+            display: flex
+            justify-content: space-between
+            margin: 0
+            padding: 0
+            border-bottom: 1px solid #eeeeee
+            li
+                a
+                    border-radius: 5px 5px 0 0
+                    position: relative
+                    top: 1px
+                    border: 1px solid transparent
+                    &:hover
+                        background: #eeeeee
+                &.active
+                    a
+                        cursor: default
+                        background-color: #fff
+                        border: 1px solid #eeeeee
+                        border-bottom-color: transparent
+                        position: relative
+                        top: 1px
+    &__years
+        font-size: 20px
+        margin-bottom: 25px
+    &__report
+        border: 1px solid #dcdcdc
+        padding: 25px

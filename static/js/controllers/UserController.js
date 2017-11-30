@@ -7,4 +7,4 @@ function UserController() {
         balance: 1000,
         expenses: 2000
     }
-};
+}

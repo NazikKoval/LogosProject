@@ -6,12 +6,9 @@ body {
   padding: 20px; }
 
 a {
-  display: block;
   text-decoration: none;
-  color: #676568;
-  padding: 15px 18px; }
+  color: #676568; }
   a:hover {
-    text-decoration: none;
     color: #676568; }
 
 .header .container:before, .header .container:after {
@@ -93,25 +90,36 @@ a {
     margin: 0;
     padding: 0;
     border-bottom: 1px solid #eeeeee; }
-    .history__months ul li a {
+    .history__months ul li {
       border-radius: 5px 5px 0 0;
       position: relative;
       top: 1px;
-      border: 1px solid transparent; }
-      .history__months ul li a:hover {
+      border: 1px solid transparent;
+      display: block;
+      padding: 15px 18px;
+      cursor: pointer; }
+      .history__months ul li:hover {
         background: #eeeeee; }
-    .history__months ul li.active a {
-      cursor: default;
-      background-color: #fff;
-      border: 1px solid #eeeeee;
-      border-bottom-color: transparent;
-      position: relative;
-      top: 1px; }
+      .history__months ul li.active {
+        cursor: default;
+        background-color: #fff;
+        border: 1px solid #eeeeee;
+        border-bottom-color: transparent;
+        position: relative;
+        top: 1px; }
 .history__years {
   font-size: 20px;
-  margin-bottom: 25px; }
+  display: flex;
+  justify-content: space-between;
+  width: 100px;
+  align-items: center;
+  text-align: center;
+  margin: 0 auto; }
+  .history__years-prev:hover, .history__years-next:hover {
+    cursor: pointer; }
 .history__report {
   border: 1px solid #dcdcdc;
-  padding: 25px; }
+  padding: 25px;
+  margin-top: 25px; }
 
 /*# sourceMappingURL=style.css.map */

@@ -24,18 +24,18 @@
                 </div>
             </div>
         </div>
-        <div class="header-menu header-menu__right" ng-controller="UserController as UserCtrl">
+        <div class="header-menu header-menu__right" ng-controller="UserController as user">
             <div class="header-menu__item">
                 <div class="header-menu__icon"><i class="fa fa-user-circle-o" aria-hidden="true"></i></div>
-                <div class="header-menu__text">User: {{UserCtrl.userData.name}} {{UserCtrl.userData.surname}}</div>
+                <div class="header-menu__text">User: {{user.userData.name}} {{user.userData.surname}}</div>
             </div>
             <div class="header-menu__item">
                 <div class="header-menu__icon"><i class="fa fa-balance-scale" aria-hidden="true"></i></div>
-                <div class="header-menu__text">${{UserCtrl.userData.balance}}</div>
+                <div class="header-menu__text">${{user.userData.balance}}</div>
             </div>
             <div class="header-menu__item">
                 <div class="header-menu__icon"><i class="fa fa-money" aria-hidden="true"></i></div>
-                <div class="header-menu__text">${{UserCtrl.userData.expenses}}</div>
+                <div class="header-menu__text">${{user.userData.expenses}}</div>
             </div>
             <div class="header-menu__item">
                 <div class="header-menu__icon"><i class="fa fa-calendar" aria-hidden="true"></i></div>

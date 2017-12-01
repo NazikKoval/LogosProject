@@ -24,18 +24,18 @@
                 </div>
             </div>
         </div>
-        <div class="header-menu header-menu__right" ng-controller="UserController as UserCtrl">
+        <div class="header-menu header-menu__right" ng-controller="UserController as user">
             <div class="header-menu__item">
                 <div class="header-menu__icon"><i class="fa fa-user-circle-o" aria-hidden="true"></i></div>
-                <div class="header-menu__text">User: {{UserCtrl.userData.name}} {{UserCtrl.userData.surname}}</div>
+                <div class="header-menu__text">User: {{user.userData.name}} {{user.userData.surname}}</div>
             </div>
             <div class="header-menu__item">
                 <div class="header-menu__icon"><i class="fa fa-balance-scale" aria-hidden="true"></i></div>
-                <div class="header-menu__text">${{UserCtrl.userData.balance}}</div>
+                <div class="header-menu__text">${{user.userData.balance}}</div>
             </div>
             <div class="header-menu__item">
                 <div class="header-menu__icon"><i class="fa fa-money" aria-hidden="true"></i></div>
-                <div class="header-menu__text">${{UserCtrl.userData.expenses}}</div>
+                <div class="header-menu__text">${{user.userData.expenses}}</div>
             </div>
             <div class="header-menu__item">
                 <div class="header-menu__icon"><i class="fa fa-calendar" aria-hidden="true"></i></div>
@@ -50,29 +50,29 @@
 </div>
 
 <div class="container">
-    <div class="content history"  ng-controller="HistoryController as h">
+    <div class="content history"  ng-controller="HistoryController as history">
         <div class="history__title">History</div>
         <div class="history__info">
             <div class="history__months">
                 <ul>
-                    <li data-ng-click="h.month(1)" data-ng-class="{active : h.activeMonth == 1}">Jan</li>
-                    <li data-ng-click="h.month(2)" data-ng-class="{active : h.activeMonth == 2}">Feb</li>
-                    <li data-ng-click="h.month(3)" data-ng-class="{active : h.activeMonth == 3}">Mar</li>
-                    <li data-ng-click="h.month(4)" data-ng-class="{active : h.activeMonth == 4}">Apr</li>
-                    <li data-ng-click="h.month(5)" data-ng-class="{active : h.activeMonth == 5}">May</li>
-                    <li data-ng-click="h.month(6)" data-ng-class="{active : h.activeMonth == 6}">June</li>
-                    <li data-ng-click="h.month(7)" data-ng-class="{active : h.activeMonth == 7}">July</li>
-                    <li data-ng-click="h.month(8)" data-ng-class="{active : h.activeMonth == 8}">Aug</li>
-                    <li data-ng-click="h.month(9)" data-ng-class="{active : h.activeMonth == 9}">Sep</li>
-                    <li data-ng-click="h.month(10)" data-ng-class="{active : h.activeMonth == 10}">Oct</li>
-                    <li data-ng-click="h.month(11)" data-ng-class="{active : h.activeMonth == 11}">Nov</li>
-                    <li data-ng-click="h.month(12)" data-ng-class="{active : h.activeMonth == 12}">Dec</li>
+                    <li data-ng-click="history.month(1)" data-ng-class="{active : history.activeMonth == 1}">Jan</li>
+                    <li data-ng-click="history.month(2)" data-ng-class="{active : history.activeMonth == 2}">Feb</li>
+                    <li data-ng-click="history.month(3)" data-ng-class="{active : history.activeMonth == 3}">Mar</li>
+                    <li data-ng-click="history.month(4)" data-ng-class="{active : history.activeMonth == 4}">Apr</li>
+                    <li data-ng-click="history.month(5)" data-ng-class="{active : history.activeMonth == 5}">May</li>
+                    <li data-ng-click="history.month(6)" data-ng-class="{active : history.activeMonth == 6}">June</li>
+                    <li data-ng-click="history.month(7)" data-ng-class="{active : history.activeMonth == 7}">July</li>
+                    <li data-ng-click="history.month(8)" data-ng-class="{active : history.activeMonth == 8}">Aug</li>
+                    <li data-ng-click="history.month(9)" data-ng-class="{active : history.activeMonth == 9}">Sep</li>
+                    <li data-ng-click="history.month(10)" data-ng-class="{active : history.activeMonth == 10}">Oct</li>
+                    <li data-ng-click="history.month(11)" data-ng-class="{active : history.activeMonth == 11}">Nov</li>
+                    <li data-ng-click="history.month(12)" data-ng-class="{active : history.activeMonth == 12}">Dec</li>
                 </ul>
             </div>
             <div class="history__years">
-                <div class="history__years-prev" data-ng-click="h.prev()">«</div>
-                <div class="history__years-current">{{h.activeYear}}</div>
-                <div class="history__years-next" data-ng-click="h.next()">»</div>
+                <div class="history__years-prev" data-ng-click="history.prev()">«</div>
+                <div class="history__years-current">{{history.activeYear}}</div>
+                <div class="history__years-next" data-ng-click="history.next()">»</div>
             </div>
             <div class="history__report">
                 <table class="table table-striped">

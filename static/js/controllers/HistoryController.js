@@ -18,13 +18,13 @@ function HistoryController() {
     };
     
     function getCurrentMonth() {
-        var d = new Date();
-        return d.getMonth();
+        var date = new Date();
+        return date.getMonth();
     }
 
     function getCurrentYear() {
-        var d = new Date();
-        return d.getFullYear();
+        var date = new Date();
+        return date.getFullYear();
     }
 
 }

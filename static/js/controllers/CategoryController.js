@@ -2,9 +2,9 @@ app.controller('CategoryController', ['CategoryService', CategoryController]);
 function CategoryController(CategoryService) {
     var _this = this;
 
-    _this.incomeCategories = CategoryService.getIncomeList();
-    _this.savingsCategories = CategoryService.getSavingsList();
-    _this.expensesCategories = CategoryService.getExpensesList();
+    CategoryService.getCategories().then(function(response) {
+         _this.categories = response;
+    });
 
     /**
      *

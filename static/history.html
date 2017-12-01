@@ -55,18 +55,8 @@
         <div class="history__info">
             <div class="history__months">
                 <ul>
-                    <li data-ng-click="history.month(1)" data-ng-class="{active : history.activeMonth == 1}">Jan</li>
-                    <li data-ng-click="history.month(2)" data-ng-class="{active : history.activeMonth == 2}">Feb</li>
-                    <li data-ng-click="history.month(3)" data-ng-class="{active : history.activeMonth == 3}">Mar</li>
-                    <li data-ng-click="history.month(4)" data-ng-class="{active : history.activeMonth == 4}">Apr</li>
-                    <li data-ng-click="history.month(5)" data-ng-class="{active : history.activeMonth == 5}">May</li>
-                    <li data-ng-click="history.month(6)" data-ng-class="{active : history.activeMonth == 6}">June</li>
-                    <li data-ng-click="history.month(7)" data-ng-class="{active : history.activeMonth == 7}">July</li>
-                    <li data-ng-click="history.month(8)" data-ng-class="{active : history.activeMonth == 8}">Aug</li>
-                    <li data-ng-click="history.month(9)" data-ng-class="{active : history.activeMonth == 9}">Sep</li>
-                    <li data-ng-click="history.month(10)" data-ng-class="{active : history.activeMonth == 10}">Oct</li>
-                    <li data-ng-click="history.month(11)" data-ng-class="{active : history.activeMonth == 11}">Nov</li>
-                    <li data-ng-click="history.month(12)" data-ng-class="{active : history.activeMonth == 12}">Dec</li>
+                    <li ng-repeat="month in history.months" data-ng-click="history.month($index + 1)"
+                        data-ng-class="{active : history.activeMonth == $index + 1}">{{month}}</li>
                 </ul>
             </div>
             <div class="history__years">

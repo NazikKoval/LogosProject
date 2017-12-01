@@ -4,6 +4,7 @@ function HistoryController() {
 
     _this.activeMonth = getCurrentMonth();
     _this.activeYear = getCurrentYear();
+    _this.months = getMonths();
 
     /**
      * Previous arrow click handler
@@ -43,6 +44,14 @@ function HistoryController() {
     function getCurrentYear() {
         var date = new Date();
         return date.getFullYear();
+    }
+
+    /**
+     * Returns array of months
+     * @returns {Array}
+     */
+    function getMonths() {
+        return ['Jan', 'Feb', 'Mar', 'Apr', 'May', 'June', 'July', 'Aug', 'Sep', 'Oct', 'Nov', 'Dec'];
     }
 
 }

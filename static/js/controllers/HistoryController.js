@@ -7,15 +7,25 @@ function HistoryController(HistoryService) {
     _this.activeYear = getCurrentYear();
     _this.months = getMonths();
 
-    HistoryService.getRecords(_this.activeMonth, _this.activeYear).then(function(response) {
-        _this.records = response;
-    });
+    refreshRecords();
+
+    /**
+     * Refreshing table of history records
+     */
+    function refreshRecords() {
+        alert(_this.activeMonth + ' ' + _this.activeYear);
+        HistoryService.getRecords(_this.activeMonth, _this.activeYear)
+            .then(function(response) {
+                _this.records = response;
+            });
+    }
 
     /**
      * Previous arrow click handler
      */
     _this.prev = function() {
         _this.activeYear--;
+        refreshRecords();
     };
 
     /**
@@ -23,6 +33,7 @@ function HistoryController(HistoryService) {
      */
     _this.next = function() {
         _this.activeYear++;
+        refreshRecords();
     };
 
     /**
@@ -31,6 +42,7 @@ function HistoryController(HistoryService) {
      */
     _this.month = function(month) {
         _this.activeMonth = month;
+        refreshRecords();
     };
 
     /**

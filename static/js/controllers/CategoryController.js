@@ -1,4 +1,5 @@
 app.controller('CategoryController', ['CategoryService', CategoryController]);
+
 function CategoryController(CategoryService) {
     var _this = this;
 

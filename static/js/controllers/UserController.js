@@ -1,4 +1,5 @@
 app.controller('UserController', UserController);
+
 function UserController() {
     var _this = this;
     _this.userData = {

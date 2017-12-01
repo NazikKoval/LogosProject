@@ -1,3 +1,6 @@
+/**
+ * Date for header
+ */
 function digitalDate() {
     var date = new Date();
     var day = date.getDate();
@@ -12,7 +15,9 @@ function digitalDate() {
 digitalDate();
 
 
-
+/**
+ * Clock for header
+ */
 function digitalWatch() {
     var date = new Date();
     var hours = date.getHours();

@@ -10,7 +10,7 @@ function digitalDate() {
     if (month < 10) month = "0" + month;
     document.getElementById("digitalDate").innerHTML = day + "." + month + "." + year;
     setTimeout("digitalDate()", 1000);
-};
+}
 
 digitalDate();
 
@@ -28,6 +28,6 @@ function digitalWatch() {
     if (seconds < 10) seconds = "0" + seconds;
     document.getElementById("digitalWatch").innerHTML = hours + ":" + minutes + ":" + seconds;
     setTimeout("digitalWatch()", 1000);
-};
+}
 
 digitalWatch();

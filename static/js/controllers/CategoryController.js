@@ -53,4 +53,4 @@ function CategoryController(CategoryService) {
     _this.plusClick = function(category) {
          // TODO: new icon
     };
-};
+}

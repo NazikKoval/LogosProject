@@ -9,4 +9,4 @@ function MenuController() {
         // TODO: menu
         _this.menuShow = true;
     };
-};
+}

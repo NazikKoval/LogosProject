@@ -13,7 +13,6 @@ function HistoryController(HistoryService) {
      * Refreshing table of history records
      */
     function refreshRecords() {
-        alert(_this.activeMonth + ' ' + _this.activeYear);
         HistoryService.getRecords(_this.activeMonth, _this.activeYear)
             .then(function(response) {
                 _this.records = response;

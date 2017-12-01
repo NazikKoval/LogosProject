@@ -1,10 +1,15 @@
-app.controller('HistoryController', HistoryController);
-function HistoryController() {
+app.controller('HistoryController', ['HistoryService', HistoryController]);
+
+function HistoryController(HistoryService) {
     var _this = this;
 
     _this.activeMonth = getCurrentMonth();
     _this.activeYear = getCurrentYear();
     _this.months = getMonths();
+
+    HistoryService.getRecords(_this.activeMonth, _this.activeYear).then(function(response) {
+        _this.records = response;
+    });
 
     /**
      * Previous arrow click handler

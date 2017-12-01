@@ -67,65 +67,10 @@
             <div class="history__report">
                 <table class="table table-striped">
                     <tbody>
-                        <tr>
-                            <td>$2500</td>
-                            <td>income</td>
-                            <td>20.05.17</td>
-                        </tr>
-                        <tr>
-                            <td>$2500</td>
-                            <td>income</td>
-                            <td>20.05.17</td>
-                        </tr>
-                        <tr>
-                            <td>$2500</td>
-                            <td>income</td>
-                            <td>20.05.17</td>
-                        </tr>
-                        <tr>
-                            <td>$2500</td>
-                            <td>income</td>
-                            <td>20.05.17</td>
-                        </tr>
-                        <tr>
-                            <td>$2500</td>
-                            <td>income</td>
-                            <td>20.05.17</td>
-                        </tr>
-                        <tr>
-                            <td>$2500</td>
-                            <td>income</td>
-                            <td>20.05.17</td>
-                        </tr>
-                        <tr>
-                            <td>$2500</td>
-                            <td>income</td>
-                            <td>20.05.17</td>
-                        </tr>
-                        <tr>
-                            <td>$2500</td>
-                            <td>income</td>
-                            <td>20.05.17</td>
-                        </tr>
-                        <tr>
-                            <td>$2500</td>
-                            <td>income</td>
-                            <td>20.05.17</td>
-                        </tr>
-                        <tr>
-                            <td>$2500</td>
-                            <td>income</td>
-                            <td>20.05.17</td>
-                        </tr>
-                        <tr>
-                            <td>$2500</td>
-                            <td>income</td>
-                            <td>20.05.17</td>
-                        </tr>
-                        <tr>
-                            <td>$2500</td>
-                            <td>income</td>
-                            <td>20.05.17</td>
+                        <tr ng-repeat="record in history.records">
+                            <td>${{record.sum}}</td>
+                            <td>{{record.type}}</td>
+                            <td>{{record.date}}</td>
                         </tr>
                     </tbody>
                 </table>
@@ -146,5 +91,6 @@
 <script src="js/controllers/UserController.js" type="text/javascript"></script>
 <script src="js/controllers/HistoryController.js" type="text/javascript"></script>
 <script src="js/models/CategoryService.js" type="text/javascript"></script>
+<script src="js/models/HistoryService.js" type="text/javascript"></script>
 </body>
 </html>

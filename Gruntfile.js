@@ -5,14 +5,14 @@ module.exports = function (grunt) {
                 separator: ';'
             },
             dist: {
-                src: ['static/js/src/*.js'],
-                dest: 'static/js/dist/main.js'
+                src: ['static/js/*.js', 'static/js/controllers/*.js', 'static/js/models/*.js'],
+                dest: 'static/build/js/main.js'
             }
         },
         uglify: {
             dist: {
-                src: ['static/js/dist/main.js'],
-                dest: 'static/js/dist/main.min.js'
+                src: ['static/build/js/main.js'],
+                dest: 'static/build/js/main.min.js'
             }
         },
 
@@ -22,11 +22,22 @@ module.exports = function (grunt) {
                     style: 'expanded'
                 },
                 files: {
-                    'static/css/dist/style.css': 'static/css/src/style.sass'
+                    'static/build/css/style.css': 'static/sass/style.sass'
                 }
             },
+        },
+        cssmin: {
+            options: {
+                keepSpecialComments: 0
+            },
+            my_target: {
+                options: {
+                    keepSpecialComments: 1
+                },
+                src: 'static/build/css/style.css',
+                dest: 'static/build/css/output.min.css'
+            }
         }
-
     });
 
     grunt.loadNpmTasks('grunt-contrib-concat');

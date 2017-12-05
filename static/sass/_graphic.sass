@@ -1,0 +1,74 @@
+.chart
+  &::-webkit-scrollbar
+    height: 10px
+  &::-webkit-scrollbar-track
+    -webkit-box-shadow: inset 0 0 6px rgba(0, 0, 0, 0.3)
+  &::-webkit-scrollbar-thumb
+    background-color: #67d091
+    border-radius: 10px
+
+.container_graphic
+  overflow: hidden
+  height: 460px
+  width: 60%
+  -webkit-box-shadow: 0px 16px 30px 0px rgba(50, 50, 50, 0.54)
+  -moz-box-shadow: 0px 16px 30px 0px rgba(50, 50, 50, 0.54)
+  box-shadow: 0px 16px 30px 0px rgba(50, 50, 50, 0.54)
+  margin: 13px auto
+
+@keyframes moveName
+  from
+    margin-top: 700px
+
+  to
+    margin-top: 10px
+
+
+.chart
+  margin: 60px auto
+  position: relative
+  list-style: none
+  padding: 0
+  animation: moveName 3s
+  animation-delay: none
+  animation-fill-mode: forwards
+  overflow: auto
+  white-space: nowrap
+
+.bar
+  background: blue
+  position: absolute
+  bottom: 0
+  span
+    position: absolute
+    opacity: 0
+    transition: 0.3s
+    font-size: 10pt
+    background: #f39c12
+    z-index: 10
+    border-radius: 10px
+  &:hover span
+    opacity: 1
+
+h1
+  text-align: center
+
+.tableCont
+  margin-top: 50px
+  margin-bottom: 50px
+
+.table-fixed
+  width: 100%
+  background-color: #f3f3f3
+  tbody
+    height: 110px
+    overflow-y: auto
+    width: 100%
+  thead, tbody, tr, td, th
+    display: block
+  tbody td
+    float: left
+  thead tr th
+    float: left
+    background-color: #f39c12
+    border-color: #e67e22

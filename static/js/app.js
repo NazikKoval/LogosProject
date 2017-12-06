@@ -4,13 +4,15 @@ app.config(function($stateProvider) {
     var categoriesState = {
         name: 'categories',
         url: '/',
-        templateUrl: 'templates/categories.html'
+        templateUrl: 'templates/categories.html',
+        controller: 'CategoryController as category'
     };
 
     var historyState = {
         name: 'history',
         url: '/history',
-        templateUrl: 'templates/history.html'
+        templateUrl: 'templates/history.html',
+        controller: 'HistoryController as history'
     };
 
     $stateProvider.state(categoriesState);

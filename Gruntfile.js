@@ -15,7 +15,6 @@ module.exports = function (grunt) {
                 dest: 'static/build/js/main.min.js'
             }
         },
-
         sass: {
             dist: {
                 options: {
@@ -24,7 +23,7 @@ module.exports = function (grunt) {
                 files: {
                     'static/build/css/style.css': 'static/sass/style.sass'
                 }
-            },
+            }
         },
         cssmin: {
             options: {
@@ -37,6 +36,16 @@ module.exports = function (grunt) {
                 src: 'static/build/css/style.css',
                 dest: 'static/build/css/output.min.css'
             }
+        },
+        watch: {
+            css: {
+                files: '**/*.sass',
+                tasks: ['sass']
+            },
+            scripts: {
+                files: '**/*.js',
+                tasks: ['concat']
+            }
         }
     });
 
@@ -47,5 +56,5 @@ module.exports = function (grunt) {
     grunt.loadNpmTasks('grunt-contrib-watch');
     
     grunt.registerTask('default', ['watch', 'concat', 'cssmin', 'sass']);
-    grunt.registerTask('dev', ['concat', 'uglify']);
+    grunt.registerTask('dev', ['concat', 'sass', 'watch']);
 };

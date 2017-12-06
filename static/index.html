@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html>
+<html data-ng-app="CoinKeeperApp">
 <head>
     <title>Your Website</title>
     <meta charset="utf-8">
@@ -13,7 +13,7 @@
     <link href="css/bootstrap.overrides.css" rel="stylesheet">
     <link href="css/style.css" rel="stylesheet">
 </head>
-<body data-ng-app="CoinKeeperApp">
+<body>
 
 <div class="header">
     <div class="container">
@@ -24,18 +24,18 @@
                 </div>
             </div>
         </div>
-        <div class="header-menu header-menu__right" ng-controller="UserController as UserCtrl">
+        <div class="header-menu header-menu__right" ng-controller="UserController as user">
             <div class="header-menu__item">
                 <div class="header-menu__icon"><i class="fa fa-user-circle-o" aria-hidden="true"></i></div>
-                <div class="header-menu__text">User: {{UserCtrl.userData.name}} {{UserCtrl.userData.surname}}</div>
+                <div class="header-menu__text">User: {{user.userData.name}} {{user.userData.surname}}</div>
             </div>
             <div class="header-menu__item">
                 <div class="header-menu__icon"><i class="fa fa-balance-scale" aria-hidden="true"></i></div>
-                <div class="header-menu__text">${{UserCtrl.userData.balance}}</div>
+                <div class="header-menu__text">${{user.userData.balance}}</div>
             </div>
             <div class="header-menu__item">
                 <div class="header-menu__icon"><i class="fa fa-money" aria-hidden="true"></i></div>
-                <div class="header-menu__text">${{UserCtrl.userData.expenses}}</div>
+                <div class="header-menu__text">${{user.userData.expenses}}</div>
             </div>
             <div class="header-menu__item">
                 <div class="header-menu__icon"><i class="fa fa-calendar" aria-hidden="true"></i></div>
@@ -52,35 +52,35 @@
 <div class="container">
     <div class="content category" ng-controller="CategoryController as category">
         <div class="category-items">
-            <div class="category-item" ng-repeat="incomeCategory in category.incomeCategories"
+            <div class="category-item" ng-repeat="incomeCategory in category.categories.income"
                  data-ng-click="category.incomeClick(incomeCategory.id)" data-ng-class="{active : category.incomeActive == incomeCategory.id}">
                 <div class="category-name">{{incomeCategory.name}}</div>
                 <div class="category-img"><img data-ng-src="{{incomeCategory.icon}}" alt=""></div>
-                <div class="category-sum">${{incomeCategory.summ}}</div>
+                <div class="category-sum">${{incomeCategory.sum}}</div>
             </div>
         </div>
         <div class="category-title">Savings</div>
         <div class="category-items">
-            <div class="category-item" ng-repeat="savingsCategory in category.savingsCategories"
+            <div class="category-item" ng-repeat="savingsCategory in category.categories.savings"
                  data-ng-click="category.savingsClick(savingsCategory.id)" ng-class="{highlight : category.savingsHighlighted, active : category.savingActive == savingsCategory.id}">
                 <div class="category-name">{{savingsCategory.name}}</div>
                 <div class="category-img"><img data-ng-src="{{savingsCategory.icon}}" alt=""></div>
-                <div class="category-sum">${{savingsCategory.summ}}</div>
+                <div class="category-sum">${{savingsCategory.sum}}</div>
             </div>
             <div class="category-item">
-                <div class="category-img plus" data-ng-click="category.plusClick('savings')"><img src="img/catagory-plus.png" alt=""></div>
+                <div class="category-img plus" data-ng-click="category.plusClick('savings')"><img src="img/category-plus.png" alt=""></div>
             </div>
         </div>
         <div class="category-title">Spends</div>
         <div class="category-items">
-            <div class="category-item" ng-repeat="expensesCategory in category.expensesCategories"
+            <div class="category-item" ng-repeat="expensesCategory in category.categories.expenses"
                  data-ng-click="category.expensesClick(expensesCategory.id)" ng-class="{highlight : category.expensesHighlighted}">
                 <div class="category-name">{{expensesCategory.name}}</div>
                 <div class="category-img"><img data-ng-src="{{expensesCategory.icon}}" alt=""></div>
-                <div class="category-sum">${{expensesCategory.summ}}</div>
+                <div class="category-sum">${{expensesCategory.sum}}</div>
             </div>
             <div class="category-item">
-                <div class="category-img plus" data-ng-click="category.plusClick('exprenses')"><img src="img/catagory-plus.png" alt=""></div>
+                <div class="category-img plus" data-ng-click="category.plusClick('exprenses')"><img src="img/category-plus.png" alt=""></div>
             </div>
         </div>
     </div>

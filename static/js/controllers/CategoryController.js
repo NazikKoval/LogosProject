@@ -1,14 +1,15 @@
 app.controller('CategoryController', ['CategoryService', CategoryController]);
+
 function CategoryController(CategoryService) {
     var _this = this;
 
-    _this.incomeCategories = CategoryService.getIncomeList();
-    _this.savingsCategories = CategoryService.getSavingsList();
-    _this.expensesCategories = CategoryService.getExpensesList();
+    CategoryService.getCategories().then(function(response) {
+         _this.categories = response;
+    });
 
     /**
-     *
-     * @param incomeId
+     * Income icon click handler
+     * @param {number} incomeId
      */
     _this.incomeClick = function(incomeId) {
         _this.incomeActive = incomeId;
@@ -18,8 +19,8 @@ function CategoryController(CategoryService) {
     };
 
     /**
-     *
-     * @param savingId
+     * Savings icon click handler
+     * @param {number} savingId
      */
     _this.savingsClick = function(savingId) {
         if ( !_this.incomeActive ) {
@@ -33,8 +34,8 @@ function CategoryController(CategoryService) {
     };
 
     /**
-     *
-     * @param expenseId
+     * Expenses icon click handler
+     * @param {number} expenseId
      */
     _this.expensesClick = function(expenseId) {
         if ( !_this.savingActive ) {
@@ -47,10 +48,10 @@ function CategoryController(CategoryService) {
     };
 
     /**
-     *
-     * @param category
+     * Plus icon click handler
+     * @param {number} category
      */
     _this.plusClick = function(category) {
          // TODO: new icon
     };
-};
+}

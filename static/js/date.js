@@ -1,3 +1,6 @@
+/**
+ * Date for header
+ */
 function digitalDate() {
     var date = new Date();
     var day = date.getDate();
@@ -7,12 +10,14 @@ function digitalDate() {
     if (month < 10) month = "0" + month;
     document.getElementById("digitalDate").innerHTML = day + "." + month + "." + year;
     setTimeout("digitalDate()", 1000);
-};
+}
 
 digitalDate();
 
 
-
+/**
+ * Clock for header
+ */
 function digitalWatch() {
     var date = new Date();
     var hours = date.getHours();
@@ -23,6 +28,6 @@ function digitalWatch() {
     if (seconds < 10) seconds = "0" + seconds;
     document.getElementById("digitalWatch").innerHTML = hours + ":" + minutes + ":" + seconds;
     setTimeout("digitalWatch()", 1000);
-};
+}
 
 digitalWatch();

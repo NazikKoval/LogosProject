@@ -1,12 +1,12 @@
-app.factory("CategoryService", ['$http', function($http) {
+app.factory('HistoryService', ['$http', function($http) {
 
     return {
         /**
          * Returns categories list
          * @returns {Array}
          */
-        getCategories: function () {
-            return $http.get('categories.json').then(function(response) {
+        getRecords: function (month, year) {
+            return $http.get('history.json').then(function(response) {
                 return response.data;
             });
         }

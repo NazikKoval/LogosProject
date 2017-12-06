@@ -1,0 +1,42 @@
+                            <!--     SECTION SIDEBAR     -->
+                            
+<div class="container" ng-app="sidebarApp" ng-controller="SidebarAppCtrl">
+                           
+                            <!--     MAIN MENU (BUTTON)    -->
+    <button ng-click="toggleState()">MENU</button>
+                           
+                            <!--     BODY SIDEBAR     -->
+    <div class="body-sidebar" ng-click="toggleState()"></div>
+       
+                            <!--     SIDEBAR     -->        
+    <div class="sidebar" sidebar-directive="state">
+
+        <button class="btn-exit" ng-click="toggleState()">X</button>
+
+        <nav class="navigation">
+            <ul>
+                <li class="navigation-items"><a href="#"><img src="imgSidebar/settings.png" alt="settings"><span class="nav-items">settings</span></a></li>
+                <div class="underline"></div>
+                <li class="navigation-items"><a href="#"><img src="imgSidebar/history.png" alt="history"><span class="nav-items">history</span></a></li>
+                <div class="underline"></div>
+                <li class="navigation-items"><a href="#"><img src="imgSidebar/statistic.png" alt="statistic"><span class="nav-items">statistic</span></a></li>
+                <div class="underline"></div>
+                <li class="navigation-items"><a href="#"><img src="imgSidebar/growth.png" alt="statistic"><span class="nav-items">account</span></a></li>
+                <div class="underline"></div>
+            </ul>
+        </nav>
+
+        <button class="btn-logOut" ng-click="toggleStateMessage()">LOG OUT</button>
+    </div>
+    
+    
+
+<script
+ src="https://ajax.googleapis.com/ajax/libs/angularjs/1.6.6/angular.min.js"></script>
+    
+<script src="jsSidebar/sidebarApp.js"></script>
+
+<script src="jsSidebar/ctrlSidebar.js"></script>
+    
+</div>
+                            <!--     END SECTION SIDEBAR     -->

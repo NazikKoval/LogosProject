@@ -1,12 +1,21 @@
 body
     text-transform: uppercase
+    font-size: 11px
 
 .content
     box-shadow: 0 0 10px rgba(0,0,0,0.5)
-    padding: 20px
+    padding: 10px
 
 a
     text-decoration: none
     color: $color-text
     &:hover
         color: $color-text
+
+
+@media (min-width: 768px)
+    body
+        font-size: 18px
+
+    .content
+        padding: 20px

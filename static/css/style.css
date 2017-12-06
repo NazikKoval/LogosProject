@@ -1,9 +1,10 @@
 body {
-  text-transform: uppercase; }
+  text-transform: uppercase;
+  font-size: 11px; }
 
 .content {
   box-shadow: 0 0 10px rgba(0, 0, 0, 0.5);
-  padding: 20px; }
+  padding: 10px; }
 
 a {
   text-decoration: none;
@@ -11,38 +12,62 @@ a {
   a:hover {
     color: #676568; }
 
+@media (min-width: 768px) {
+  body {
+    font-size: 18px; }
+
+  .content {
+    padding: 20px; } }
 .header .container:before, .header .container:after {
   display: none; }
 .header .container, .header-menu {
   display: flex; }
 .header-menu {
-  background: #67d091;
-  box-shadow: 0 0 10px rgba(0, 0, 0, 0.5);
-  margin: 20px 0; }
+  background: #67d091; }
   .header-menu__item {
-    padding: 10px 23px;
     display: flex;
-    justify-content: space-between; }
+    justify-content: space-between;
+    flex-direction: column;
+    align-items: center; }
+    .header-menu__item-date, .header-menu__item-time {
+      display: none; }
   .header-menu__icon {
     color: #fbfcf7;
     font-size: 25px;
     cursor: pointer; }
   .header-menu__text {
     color: #676568;
-    padding-left: 10px;
     align-items: center;
-    display: flex;
-    font-size: 16px; }
+    display: flex; }
   .header-menu__left {
-    margin-right: 30px; }
+    padding: 10px;
+    border-right: 1px solid #fbfcf7; }
   .header-menu__right {
     flex-grow: 1;
-    justify-content: space-around; }
+    justify-content: space-around;
+    padding: 10px 5px; }
+@media (min-width: 768px) {
+  .header-menu {
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.5);
+    margin: 20px 0;
+    padding: 20px; }
+    .header-menu__item-date, .header-menu__item-time {
+      display: flex; }
+    .header-menu__left {
+      margin-right: 20px;
+      border-right: none; } }
+@media (min-width: 992px) {
+  .header-menu__item {
+    flex-direction: row; }
+  .header-menu__text {
+    padding-left: 10px; }
+  .header-menu__left {
+    margin-right: 30px; } }
 
 .category-title {
-  font-size: 20px;
+  font-size: 15px;
   border-bottom: 2px solid #9a9a9a;
-  margin: 20px 0; }
+  margin: 15px 0; }
 .category-items {
   display: flex;
   justify-content: flex-start;
@@ -56,10 +81,11 @@ a {
 .category-item.highlight .category-img img {
   border: 2px solid orange; }
 .category-img {
-  text-align: center; }
+  text-align: center;
+  margin-bottom: 5px; }
   .category-img img {
-    width: 50px;
-    height: 50px;
+    width: 40px;
+    height: 40px;
     border: 2px solid #64d296;
     border-radius: 50%;
     padding: 5px; }
@@ -67,26 +93,35 @@ a {
     border: 2px solid #9a9a9a; }
   .category-img.plus.active {
     border: 2px solid red; }
+.category-name {
+  margin-bottom: 5px; }
 .category-name, .category-sum {
   text-align: center; }
+@media (min-width: 768px) {
+  .category-title {
+    font-size: 20px; } }
+@media (min-width: 992px) {
+  .category-img img {
+    width: 50px;
+    height: 50px; }
+  .category-title {
+    margin: 25px 0; } }
 
 .history__title {
   text-align: center;
   font-weight: bold;
-  font-size: 24px;
-  margin-bottom: 25px; }
+  font-size: 15px;
+  margin-bottom: 10px; }
 .history__info {
-  border: 2px solid #676568;
-  width: 900px;
+  max-width: 100%;
   text-align: center;
-  margin: 0 auto;
-  padding: 25px; }
+  margin: 0 auto; }
 .history__months {
-  margin-bottom: 25px; }
+  margin-bottom: 10px; }
   .history__months ul {
     list-style: none;
     display: flex;
-    justify-content: space-between;
+    flex-wrap: wrap;
     margin: 0;
     padding: 0;
     border-bottom: 1px solid #eeeeee; }
@@ -96,7 +131,7 @@ a {
       top: 1px;
       border: 1px solid transparent;
       display: block;
-      padding: 15px 18px;
+      padding: 5px;
       cursor: pointer; }
       .history__months ul li:hover {
         background: #eeeeee; }
@@ -119,7 +154,30 @@ a {
     cursor: pointer; }
 .history__report {
   border: 1px solid #dcdcdc;
-  padding: 25px;
-  margin-top: 25px; }
+  padding: 10px;
+  margin-top: 10px; }
+@media (min-width: 768px) {
+  .history__title {
+    font-size: 20px;
+    margin-bottom: 20px; }
+  .history__months {
+    margin-bottom: 20px; }
+    .history__months ul li {
+      padding: 8px; }
+  .history__report {
+    margin-top: 20px; } }
+@media (min-width: 992px) {
+  .history__title {
+    font-size: 24px; }
+  .history__info {
+    border: 2px solid #676568;
+    padding: 25px; }
+  .history__months {
+    margin-bottom: 30px; }
+    .history__months ul li {
+      padding: 10px 15px; }
+  .history__report {
+    margin-top: 30px;
+    padding: 20px; } }
 
 /*# sourceMappingURL=style.css.map */

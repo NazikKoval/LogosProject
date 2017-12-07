@@ -1,6 +1,6 @@
 var app = angular.module('CoinKeeperApp', ['ui.router']);
 
-app.config(function($stateProvider) {
+app.config(function($stateProvider, $urlRouterProvider) {
     var categoriesState = {
         name: 'categories',
         url: '/',
@@ -15,6 +15,7 @@ app.config(function($stateProvider) {
         controller: 'HistoryController as history'
     };
 
+    $urlRouterProvider.otherwise('/');
     $stateProvider.state(categoriesState);
     $stateProvider.state(historyState);
 });

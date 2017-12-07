@@ -1,0 +1,22 @@
+<div class="header-menu header-menu__right">
+    <div class="header-menu__item">
+        <div class="header-menu__icon"><i class="fa fa-user-circle-o" aria-hidden="true"></i></div>
+        <div class="header-menu__text">User: {{user.userData.name}} {{user.userData.surname}}</div>
+    </div>
+    <div class="header-menu__item">
+        <div class="header-menu__icon"><i class="fa fa-balance-scale" aria-hidden="true"></i></div>
+        <div class="header-menu__text">${{user.userData.balance}}</div>
+    </div>
+    <div class="header-menu__item">
+        <div class="header-menu__icon"><i class="fa fa-money" aria-hidden="true"></i></div>
+        <div class="header-menu__text">${{user.userData.expenses}}</div>
+    </div>
+    <div class="header-menu__item header-menu__item-date" ng-controller="TimeController as time">
+        <div class="header-menu__icon"><i class="fa fa-calendar" aria-hidden="true"></i></div>
+        <div class="header-menu__text">{{time.date}}</div>
+    </div>
+    <div class="header-menu__item header-menu__item-time" ng-controller="TimeController as time">
+        <div class="header-menu__icon"><i class="fa fa-clock-o" aria-hidden="true"></i></div>
+        <div class="header-menu__text">{{time.time}}</div>
+    </div>
+</div>

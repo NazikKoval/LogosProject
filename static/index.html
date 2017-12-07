@@ -13,75 +13,11 @@
 </head>
 <body ng-controller="MainController as main">
 
-<div class="body-sidebar" data-ng-click="main.closeSidebar()"></div>
-<div class="sidebar">
-    <button class="btn-exit" data-ng-click="main.closeSidebar()">X</button>
-    <nav class="navigation">
-        <ul>
-            <li class="navigation-items">
-                <a ui-sref="categories" ui-sref-active="active" data-ng-click="main.closeSidebar()">
-                    <img src="img/settings.png" alt="settings">
-                    <span class="nav-items">categories</span>
-                </a>
-            </li>
-            <div class="underline"></div>
-            <li class="navigation-items">
-                <a ui-sref="history" ui-sref-active="active" data-ng-click="main.closeSidebar()">
-                    <img src="img/history.png" alt="history">
-                    <span class="nav-items">history</span>
-                </a>
-            </li>
-            <div class="underline"></div>
-            <li class="navigation-items">
-                <a href="#" data-ng-click="main.closeSidebar()">
-                    <img src="img/statistic.png" alt="statistic">
-                    <span class="nav-items">statistic</span>
-                </a>
-            </li>
-            <div class="underline"></div>
-            <li class="navigation-items">
-                <a href="#" data-ng-click="main.closeSidebar()">
-                    <img src="img/growth.png" alt="statistic">
-                    <span class="nav-items">account</span>
-                </a>
-            </li>
-            <div class="underline"></div>
-        </ul>
-    </nav>
-    <button class="btn-logOut" data-ng-click="main.closeSidebar()">LOG OUT</button>
-</div>
-
+<sidebar></sidebar>
 <div class="header">
     <div class="container">
-        <div class="header-menu header-menu__left">
-            <div class="header-menu__item" data-ng-click="main.openSidebar()">
-                <div class="header-menu__icon">
-                    <i class="fa fa-th-large" aria-hidden="true"></i>
-                </div>
-            </div>
-        </div>
-        <div class="header-menu header-menu__right" ng-controller="UserController as user">
-            <div class="header-menu__item">
-                <div class="header-menu__icon"><i class="fa fa-user-circle-o" aria-hidden="true"></i></div>
-                <div class="header-menu__text">User: {{user.userData.name}} {{user.userData.surname}}</div>
-            </div>
-            <div class="header-menu__item">
-                <div class="header-menu__icon"><i class="fa fa-balance-scale" aria-hidden="true"></i></div>
-                <div class="header-menu__text">${{user.userData.balance}}</div>
-            </div>
-            <div class="header-menu__item">
-                <div class="header-menu__icon"><i class="fa fa-money" aria-hidden="true"></i></div>
-                <div class="header-menu__text">${{user.userData.expenses}}</div>
-            </div>
-            <div class="header-menu__item header-menu__item-date">
-                <div class="header-menu__icon"><i class="fa fa-calendar" aria-hidden="true"></i></div>
-                <div id="digitalDate" class="header-menu__text"></div>
-            </div>
-            <div class="header-menu__item header-menu__item-time">
-                <div class="header-menu__icon"><i class="fa fa-clock-o" aria-hidden="true"></i></div>
-                <div id="digitalWatch" class="header-menu__text"></div>
-            </div>
-        </div>
+        <sidebar-toggle></sidebar-toggle>
+        <header></header>
     </div>
 </div>
 

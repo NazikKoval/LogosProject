@@ -1,0 +1,37 @@
+<div class="body-sidebar" data-ng-click="main.closeSidebar()"></div>
+<div class="sidebar">
+    <button class="btn-exit" data-ng-click="main.closeSidebar()">X</button>
+    <nav class="navigation">
+        <ul>
+            <li class="navigation-items">
+                <a ui-sref="categories" ui-sref-active="active" data-ng-click="main.closeSidebar()">
+                    <img src="img/settings.png" alt="settings">
+                    <span class="nav-items">categories</span>
+                </a>
+            </li>
+            <div class="underline"></div>
+            <li class="navigation-items">
+                <a ui-sref="history" ui-sref-active="active" data-ng-click="main.closeSidebar()">
+                    <img src="img/history.png" alt="history">
+                    <span class="nav-items">history</span>
+                </a>
+            </li>
+            <div class="underline"></div>
+            <li class="navigation-items">
+                <a href="#" data-ng-click="main.closeSidebar()">
+                    <img src="img/statistic.png" alt="statistic">
+                    <span class="nav-items">statistic</span>
+                </a>
+            </li>
+            <div class="underline"></div>
+            <li class="navigation-items">
+                <a href="#" data-ng-click="main.closeSidebar()">
+                    <img src="img/growth.png" alt="statistic">
+                    <span class="nav-items">account</span>
+                </a>
+            </li>
+            <div class="underline"></div>
+        </ul>
+    </nav>
+    <button class="btn-logOut" data-ng-click="main.closeSidebar()">LOG OUT</button>
+</div>

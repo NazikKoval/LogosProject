@@ -15,6 +15,46 @@
 </head>
 <body>
 
+<div ng-controller="SidebarController as sidebar">
+    <div class="body-sidebar" data-ng-click="sidebar.close()"></div>
+    <div class="sidebar">
+        <button class="btn-exit" data-ng-click="sidebar.close()">X</button>
+        <nav class="navigation">
+            <ul>
+                <li class="navigation-items">
+                    <a href="#">
+                        <img src="img/settings.png" alt="settings">
+                        <span class="nav-items">settings</span>
+                    </a>
+                </li>
+                <div class="underline"></div>
+                <li class="navigation-items">
+                    <a href="#">
+                        <img src="img/history.png" alt="history">
+                        <span class="nav-items">history</span>
+                    </a>
+                </li>
+                <div class="underline"></div>
+                <li class="navigation-items">
+                    <a href="#">
+                        <img src="img/statistic.png" alt="statistic">
+                        <span class="nav-items">statistic</span>
+                    </a>
+                </li>
+                <div class="underline"></div>
+                <li class="navigation-items">
+                    <a href="#">
+                        <img src="img/growth.png" alt="statistic">
+                        <span class="nav-items">account</span>
+                    </a>
+                </li>
+                <div class="underline"></div>
+            </ul>
+        </nav>
+        <button class="btn-logOut">LOG OUT</button>
+    </div>
+</div>
+
 <div class="header">
     <div class="container">
         <div class="header-menu header-menu__left" ng-controller="MenuController as menu">

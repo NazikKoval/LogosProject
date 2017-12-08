@@ -6,7 +6,7 @@ app.controller('MenuController', MenuController);
 function MenuController() {
     var _this = this;
     _this.toggleMenu = function() {
-        // TODO: menu
-        _this.menuShow = true;
+        $('.body-sidebar').fadeIn(500);
+        $('.sidebar').addClass('show');
     };
 }

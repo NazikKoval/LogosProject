@@ -5,7 +5,10 @@ module.exports = function (grunt) {
                 separator: ';'
             },
             dist: {
-                src: ['static/js/*.js', 'static/js/controllers/*.js', 'static/js/models/*.js'],
+                src: [
+                    'static/js/*.js', 'static/js/controllers/*.js',
+                    'static/js/models/*.js', 'static/js/directives/*.js'
+                ],
                 dest: 'static/build/js/main.js'
             }
         },

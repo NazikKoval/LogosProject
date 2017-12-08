@@ -7,10 +7,8 @@
     <meta name="format-detection" content="telephone=no">
 
     <link href="libs/normalize.css" rel="stylesheet">
-    <link href="css/common.css" rel="stylesheet">
     <link href="libs/bootstrap/css/bootstrap.css" rel="stylesheet">
     <link href="libs/font-awesome-4.7.0/css/font-awesome.min.css" rel="stylesheet">
-    <link href="css/bootstrap.overrides.css" rel="stylesheet">
     <link href="build/css/style.css" rel="stylesheet">
 </head>
 <body>
@@ -22,28 +20,28 @@
         <nav class="navigation">
             <ul>
                 <li class="navigation-items">
-                    <a href="#">
+                    <a ui-sref="categories" ui-sref-active="active" data-ng-click="sidebar.close()">
                         <img src="img/settings.png" alt="settings">
-                        <span class="nav-items">settings</span>
+                        <span class="nav-items">categories</span>
                     </a>
                 </li>
                 <div class="underline"></div>
                 <li class="navigation-items">
-                    <a href="#">
+                    <a ui-sref="history" ui-sref-active="active" data-ng-click="sidebar.close()">
                         <img src="img/history.png" alt="history">
                         <span class="nav-items">history</span>
                     </a>
                 </li>
                 <div class="underline"></div>
                 <li class="navigation-items">
-                    <a href="#">
+                    <a href="#" data-ng-click="sidebar.close()">
                         <img src="img/statistic.png" alt="statistic">
                         <span class="nav-items">statistic</span>
                     </a>
                 </li>
                 <div class="underline"></div>
                 <li class="navigation-items">
-                    <a href="#">
+                    <a href="#" data-ng-click="sidebar.close()">
                         <img src="img/growth.png" alt="statistic">
                         <span class="nav-items">account</span>
                     </a>
@@ -77,11 +75,11 @@
                 <div class="header-menu__icon"><i class="fa fa-money" aria-hidden="true"></i></div>
                 <div class="header-menu__text">${{user.userData.expenses}}</div>
             </div>
-            <div class="header-menu__item">
+            <div class="header-menu__item header-menu__item-date">
                 <div class="header-menu__icon"><i class="fa fa-calendar" aria-hidden="true"></i></div>
                 <div id="digitalDate" class="header-menu__text"></div>
             </div>
-            <div class="header-menu__item">
+            <div class="header-menu__item header-menu__item-time">
                 <div class="header-menu__icon"><i class="fa fa-clock-o" aria-hidden="true"></i></div>
                 <div id="digitalWatch" class="header-menu__text"></div>
             </div>
@@ -90,45 +88,13 @@
 </div>
 
 <div class="container">
-    <div class="content category" ng-controller="CategoryController as category">
-        <div class="category-items">
-            <div class="category-item" ng-repeat="incomeCategory in category.categories.income"
-                 data-ng-click="category.incomeClick(incomeCategory.id)" data-ng-class="{active : category.incomeActive == incomeCategory.id}">
-                <div class="category-name">{{incomeCategory.name}}</div>
-                <div class="category-img"><img data-ng-src="{{incomeCategory.icon}}" alt=""></div>
-                <div class="category-sum">${{incomeCategory.sum}}</div>
-            </div>
-        </div>
-        <div class="category-title">Savings</div>
-        <div class="category-items">
-            <div class="category-item" ng-repeat="savingsCategory in category.categories.savings"
-                 data-ng-click="category.savingsClick(savingsCategory.id)" ng-class="{highlight : category.savingsHighlighted, active : category.savingActive == savingsCategory.id}">
-                <div class="category-name">{{savingsCategory.name}}</div>
-                <div class="category-img"><img data-ng-src="{{savingsCategory.icon}}" alt=""></div>
-                <div class="category-sum">${{savingsCategory.sum}}</div>
-            </div>
-            <div class="category-item">
-                <div class="category-img plus" data-ng-click="category.plusClick('savings')"><img src="img/category-plus.png" alt=""></div>
-            </div>
-        </div>
-        <div class="category-title">Spends</div>
-        <div class="category-items">
-            <div class="category-item" ng-repeat="expensesCategory in category.categories.expenses"
-                 data-ng-click="category.expensesClick(expensesCategory.id)" ng-class="{highlight : category.expensesHighlighted}">
-                <div class="category-name">{{expensesCategory.name}}</div>
-                <div class="category-img"><img data-ng-src="{{expensesCategory.icon}}" alt=""></div>
-                <div class="category-sum">${{expensesCategory.sum}}</div>
-            </div>
-            <div class="category-item">
-                <div class="category-img plus" data-ng-click="category.plusClick('exprenses')"><img src="img/category-plus.png" alt=""></div>
-            </div>
-        </div>
-    </div>
+    <ui-view></ui-view>
 </div>
 
 <script src="libs/jquery.min.js" type="text/javascript"></script>
 <script src="libs/bootstrap/js/bootstrap.min.js" type="text/javascript"></script>
 <script src="libs/angular.min.js" type="text/javascript"></script>
+<script src="libs/angular-ui-router.min.js"></script>
 
 <script src="build/js/main.js" type="text/javascript"></script>
 </body>

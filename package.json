@@ -24,5 +24,12 @@
     "bugs": {
         "url": "https://github.com/NazikKoval/LogosProject/issues"
     },
-    "homepage": "https://github.com/NazikKoval/LogosProject#readme"
+    "homepage": "https://github.com/NazikKoval/LogosProject#readme",
+    "dependencies": {
+        "body-parser": "^1.18.2",
+        "express": "^4.16.2",
+        "mysql": "^2.15.0",
+        "request": "^2.83.0",
+        "request-promise": "^4.2.2"
+    }
 }

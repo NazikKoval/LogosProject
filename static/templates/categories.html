@@ -1,0 +1,34 @@
+<div class="content category">
+    <div class="category-items">
+        <div class="category-item" ng-repeat="incomeCategory in category.categories.income"
+             data-ng-click="category.incomeClick(incomeCategory.id)" data-ng-class="{active : category.incomeActive == incomeCategory.id}">
+            <div class="category-name">{{incomeCategory.name}}</div>
+            <div class="category-img"><img data-ng-src="{{incomeCategory.icon}}" alt=""></div>
+            <div class="category-sum">${{incomeCategory.sum}}</div>
+        </div>
+    </div>
+    <div class="category-title">Savings</div>
+    <div class="category-items">
+        <div class="category-item" ng-repeat="savingsCategory in category.categories.savings"
+             data-ng-click="category.savingsClick(savingsCategory.id)" ng-class="{highlight : category.savingsHighlighted, active : category.savingActive == savingsCategory.id}">
+            <div class="category-name">{{savingsCategory.name}}</div>
+            <div class="category-img"><img data-ng-src="{{savingsCategory.icon}}" alt=""></div>
+            <div class="category-sum">${{savingsCategory.sum}}</div>
+        </div>
+        <div class="category-item">
+            <div class="category-img plus" data-ng-click="category.plusClick('savings')"><img src="img/category-plus.png" alt=""></div>
+        </div>
+    </div>
+    <div class="category-title">Spends</div>
+    <div class="category-items">
+        <div class="category-item" ng-repeat="expensesCategory in category.categories.expenses"
+             data-ng-click="category.expensesClick(expensesCategory.id)" ng-class="{highlight : category.expensesHighlighted}">
+            <div class="category-name">{{expensesCategory.name}}</div>
+            <div class="category-img"><img data-ng-src="{{expensesCategory.icon}}" alt=""></div>
+            <div class="category-sum">${{expensesCategory.sum}}</div>
+        </div>
+        <div class="category-item">
+            <div class="category-img plus" data-ng-click="category.plusClick('exprenses')"><img src="img/category-plus.png" alt=""></div>
+        </div>
+    </div>
+</div>

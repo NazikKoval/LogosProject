@@ -5,28 +5,48 @@ module.exports = function (grunt) {
                 separator: ';'
             },
             dist: {
-                src: ['static/js/src/*.js'],
-                dest: 'static/js/dist/main.js'
+                src: ['static/js/*.js', 'static/js/controllers/*.js', 'static/js/models/*.js'],
+                dest: 'static/build/js/main.js'
             }
         },
         uglify: {
             dist: {
-                src: ['static/js/dist/main.js'],
-                dest: 'static/js/dist/main.min.js'
+                src: ['static/build/js/main.js'],
+                dest: 'static/build/js/main.min.js'
             }
         },
-
         sass: {
             dist: {
                 options: {
                     style: 'expanded'
                 },
                 files: {
-                    'static/css/dist/style.css': 'static/css/src/style.sass'
+                    'static/build/css/style.css': 'static/sass/style.sass'
                 }
+            }
+        },
+        cssmin: {
+            options: {
+                keepSpecialComments: 0
             },
+            my_target: {
+                options: {
+                    keepSpecialComments: 1
+                },
+                src: 'static/build/css/style.css',
+                dest: 'static/build/css/output.min.css'
+            }
+        },
+        watch: {
+            css: {
+                files: '**/*.sass',
+                tasks: ['sass']
+            },
+            scripts: {
+                files: '**/*.js',
+                tasks: ['concat']
+            }
         }
-
     });
 
     grunt.loadNpmTasks('grunt-contrib-concat');
@@ -34,9 +54,7 @@ module.exports = function (grunt) {
     grunt.loadNpmTasks('grunt-contrib-cssmin');
     grunt.loadNpmTasks('grunt-contrib-sass');
     grunt.loadNpmTasks('grunt-contrib-watch');
-    grunt.registerTask('default', ['watch']);
-    grunt.registerTask('default', ['concat']);
-    grunt.registerTask('dev', ['concat', 'uglify']);
-    grunt.registerTask("default", ["cssmin"]);
-    grunt.registerTask('default', ['sass']);
+    
+    grunt.registerTask('default', ['watch', 'concat', 'cssmin', 'sass']);
+    grunt.registerTask('dev', ['concat', 'sass', 'watch']);
 };

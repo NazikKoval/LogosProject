@@ -1,0 +1,57 @@
+.header
+    .container
+        &:before,
+        &:after
+            display: none
+    .container,
+    &-menu
+        display: flex
+    &-menu
+        background: $color-brand
+        &__item
+            display: flex
+            justify-content: space-between
+            flex-direction: column
+            align-items: center
+            &-date,
+            &-time
+                display: none
+        &__icon
+            color: $color-inverse
+            font-size: 25px
+            cursor: pointer
+        &__text
+            color: $color-text
+            align-items: center
+            display: flex
+        &__left
+            padding: 10px
+            border-right: 1px solid $color-inverse
+        &__right
+            flex-grow: 1
+            justify-content: space-around
+            padding: 10px 5px
+
+
+    @media (min-width: 768px)
+        &-menu
+            box-shadow: 0 0 10px rgba(0,0,0,0.5)
+            margin: 20px 0
+            padding: 20px
+            &__item
+                &-date,
+                &-time
+                    display: flex
+            &__left
+                margin-right: 20px
+                border-right: none
+
+
+    @media (min-width: 992px)
+        &-menu
+            &__item
+                flex-direction: row
+            &__text
+                padding-left: 10px
+            &__left
+                margin-right: 30px

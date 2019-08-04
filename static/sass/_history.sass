@@ -1,0 +1,81 @@
+.history
+    &__title
+        text-align: center
+        font-weight: bold
+        font-size: 15px
+        margin-bottom: 10px
+    &__info
+        max-width: 100%
+        text-align: center
+        margin: 0 auto
+    &__months
+        margin-bottom: 10px
+        ul
+            list-style: none
+            display: flex
+            flex-wrap: wrap
+            margin: 0
+            padding: 0
+            border-bottom: 1px solid #eeeeee
+            li
+                border-radius: 5px 5px 0 0
+                position: relative
+                top: 1px
+                border: 1px solid transparent
+                display: block
+                padding: 5px
+                cursor: pointer
+                &:hover
+                    background: #eeeeee
+                &.active
+                    cursor: default
+                    background-color: #fff
+                    border: 1px solid #eeeeee
+                    border-bottom-color: transparent
+                    position: relative
+                    top: 1px
+    &__years
+        font-size: 20px
+        display: flex
+        justify-content: space-between
+        width: 100px
+        align-items: center
+        text-align: center
+        margin: 0 auto
+        &-prev,
+        &-next
+            &:hover
+                cursor: pointer
+    &__report
+        border: 1px solid #dcdcdc
+        padding: 10px
+        margin-top: 10px
+
+
+    @media (min-width: 768px)
+        &__title
+            font-size: 20px
+            margin-bottom: 20px
+        &__months
+            margin-bottom: 20px
+            ul
+                li
+                    padding: 8px
+        &__report
+            margin-top: 20px
+
+
+    @media (min-width: 992px)
+        &__title
+            font-size: 24px
+        &__info
+            border: 2px solid $color-text
+            padding: 25px
+        &__months
+            margin-bottom: 30px
+            ul
+                li
+                    padding: 10px 15px
+        &__report
+            margin-top: 30px
+            padding: 20px

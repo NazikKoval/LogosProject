@@ -1,0 +1,44 @@
+{
+  "income": [
+    {
+      "id": 1,
+      "icon": "img/category-income.png",
+      "name": "Income",
+      "sum": 500
+    },
+    {
+      "id": 2,
+      "icon": "img/category-income.png",
+      "name": "Income 2",
+      "sum": 5500
+    }
+  ],
+  "savings": [
+    {
+      "id": 11,
+      "icon": "img/category-cash.png",
+      "name": "Cash",
+      "sum": 500
+    },
+    {
+      "id": 12,
+      "icon": "img/category-bank.png",
+      "name": "Bank",
+      "sum": 500
+    }
+  ],
+  "expenses": [
+    {
+      "id": 21,
+      "icon": "img/category-food.png",
+      "name": "Food",
+      "sum": 500
+    },
+    {
+      "id": 22,
+      "icon": "img/category-entertainment.png",
+      "name": "Entertainment",
+      "sum": 500
+    }
+  ]
+}
